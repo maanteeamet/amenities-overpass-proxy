@@ -11,7 +11,7 @@ const HOST = '0.0.0.0';
 const app = express();
 
 async function fetch_data() {
-  return (await got('https://overpass-api.de/api/interpreter?data=%5Bout%3Ajson%5D%5Btimeout%3A25%5D%3B%0A(%0A%20%20node%5B!shop%5D%5Bamenity!%3Dpharmacy%5D%5Bamenity%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20node%5Btourism%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20node%5Bhistoric%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3B%0Aout%20body%3B%0A%3E%3B%0Aout%20skel%20qt%3B', {responseType: 'json', resolveBodyOnly: true}));
+  return (await got('https://overpass-api.de/api/interpreter?data=%5Bout%3Ajson%5D%5Btimeout%3A25%5D%3B%0Aarea%283600079510%29-%3E.searchArea%3B%0A(%0A%20%20node%5B!shop%5D%5Bamenity!%3Dpharmacy%5D%5Bamenity%5D(area.searchArea)%3B%0A%20%20node%5Btourism%5D(area.searchArea)%3B%0A%20%20node%5Bhistoric%5D(area.searchArea)%3B%0A)%3B%0Aout%20body%3B%0A%3E%3B%0Aout%20skel%20qt%3B', {responseType: 'json', resolveBodyOnly: true}));
 }
 
 function getNow() {
