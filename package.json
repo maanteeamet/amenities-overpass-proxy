@@ -2,6 +2,7 @@
   "name": "amenities-overpass-proxy",
   "version": "0.0.1",
   "description": "",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -9,7 +10,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "express": "latest",
-    "got": "latest"
+    "express": "^4.18.1",
+    "got": "^12.1.0"
   }
 }

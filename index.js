@@ -1,7 +1,7 @@
 'use strict';
 
-const express = require('express');
-const got = require('got');
+import got from "got";
+import express from "express";
 
 // Constants
 const PORT = 8080;
@@ -17,6 +17,11 @@ async function fetch_data() {
 function getNow() {
   return new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '');
 }
+
+app.get('/check', async (req, res) => {
+  console.log(getNow() + ' - Client connected');
+  res.send(data);
+});
 
 let data;
 
